@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.30)
-project(1086_weird_algorithm)
+project(1086-weird-algorithm)
 
 set(CMAKE_CXX_STANDARD 20)
 
