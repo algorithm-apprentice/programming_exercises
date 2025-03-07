@@ -1,5 +1,5 @@
 /* https://cses.fi/problemset/task/1068
- * Hint: Gauss' story
+ * Skills: simulation
  * Common mistakes: int overflow
  */
 
@@ -29,20 +29,22 @@ void debug(const auto &... x) {
     std::cerr << '\n';
 }
 
-int solve() {
-    int n;
-    std::cin >> n;
-    i64 sum = 0;
-    for (int i = 0; i < n - 1; ++i) {
-        int x;
-        std::cin >> x;
-        sum += x;
+void solve(i64 x) {
+    while (x != 1) {
+        std::cout << x << ' ';
+        if (x % 2 == 0) {
+            x /= 2;
+        } else {
+            x = 3 * x + 1;
+        }
     }
-    return (1LL + n) * n / 2 - sum;
+    std::cout << 1 << '\n';
 }
 
 int main() {
     fast_io();
-    std::cout << solve() << "\n";
+    int x;
+    std::cin >> x;
+    solve(x);
     return 0;
 }
